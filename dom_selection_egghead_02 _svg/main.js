@@ -14,18 +14,26 @@ var scores = [
     {
         age: 57,
         name: "Marshall"
-    }
+    },
+     {
+        age: 68,
+        name: "Villarreal"
+    },
 ]
 
 
 var update = d3.select('.chart')
- .selectAll('div')
+.append('svg')
+ .attr('width', 225)
+ .attr('height', 300)
+ .selectAll('rect')
  .data(scores)
  .enter()
-   .append('div')
+   .append('rect')
+   .attr('y',(d,i)=> i * 33)
+   .style('width', d => d.age)
    .text((d)=>{
        return d.name
    })
    .attr('class',"bar")
-   .style('width', d => d.age + "px")
    
