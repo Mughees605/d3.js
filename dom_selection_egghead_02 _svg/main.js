@@ -4,7 +4,7 @@ var scores = [
         name: "Welch"
     },
     {
-        age: 68,
+        age: 188,
         name: "Villarreal"
     },
     {
@@ -12,33 +12,51 @@ var scores = [
         name: "Sheryl"
     },
     {
-        age: 57,
+        age: 97,
         name: "Marshall"
     },
     {
-        age: 68,
+        age: 88,
         name: "Villarreal"
     },
 ]
 
-
-var bar = d3.select('.chart')
+var g = d3.select('.chart') // process of creating g
     .append('svg')
-    .attr('width', 225)
+    .attr('width', 400)
     .attr('height', 300)
     .selectAll('g')
     .data(scores)
     .enter()
     .append('g')
-    .attr('transform', (d, i) => 'translate(0, ' + i * 33 + ')')
+    .attr('transform', (d, i) => 'translate(0, ' + i * 33 + ')') // g created 
 
-    bar.append('rect')
+function scaleBar(selection, scale) {
+    selection.style('transform', 'scaleX(' + scale + ')')
+}
+
+function scaleOpacity(selection, opacity) {
+    selection.style('fill-opacity', opacity)
+}
+
+g.append('rect')
     .style('width', d => d.age)
     .attr('class', "bar")
+    .on('mouseover', function (d, i, elements) {
+        d3.select(this).call(scaleBar, 2)
+        d3.selectAll(elements)
+            .filter(':not(:hover)')
+            .call(scaleOpacity, 0.5)
+    })
+    .on('mouseout', function (d, i, elements) {
+        d3.select(this).call(scaleBar, 1)
+        d3.selectAll(elements)
+            .call(scaleOpacity, 1)
+    })
 
-    bar.append('text')
+g.append('text')
     .attr('y', 20)
-    .text((d)=>{
+    .text((d) => {
         return d.name
     })
 
