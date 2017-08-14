@@ -1,4 +1,4 @@
-var margin = { top: 10, right: 20, bottom: 60, left: 30 };
+var margin = { top: 10, right: 20, bottom: 60, left: 40 };
 var width = 400 - margin.right - margin.left;
 var height = 565 - margin.top - margin.bottom;
 
@@ -44,6 +44,9 @@ svg.selectAll('rect')
     .attr('width', xScale.bandwidth())
     .attr('height', d => height - yScale(d.score))
     .style('fill', 'lightblue')
+    .style('stroke' , "black")
+
+    
 function responsivefy(svg) {
     // get container + svg aspect ratio
     var container = d3.select(svg.node().parentNode),
