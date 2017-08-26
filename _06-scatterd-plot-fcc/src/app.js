@@ -11,14 +11,29 @@ var svg = d3.select('.chart')
   .attr('transform', 'translate(' + margin.left + ', ' + margin.top + ')');
 
 d3.json('https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/cyclist-data.json', function (err, data) {
+   
+  data.forEach((data)=>{
+    console.log(data.Time)
+  })
 
   var yScale = d3.scaleLinear()
-     .domain(d3.extent(data,d=>d.Place))
-     .range([height,0])
-     .nice()
+    .domain(d3.extent(data, d => d.Place))
+    .range([height, 0])
+    .nice()
 
   var yAxis = d3.axisLeft(yScale);
   svg.call(yAxis);
+  
+  var xScale = d3.scaleTime()
+      .domain(d3.extent(data,d => d.Time))
+      .range([0,width])
+  
+  var xAxis = d3.axisBottom(xScale)
+
+  svg.append('g')
+     .attr('transform',`translate(0,${height})`)
+     .call(xAxis)
+  
   // var yScale = d3.scaleLinear()
   //   .domain(d3.extent(data, d => d.))
   //   .range([height, 0])
