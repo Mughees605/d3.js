@@ -11,9 +11,12 @@ var svg = d3.select('.chart')
   .attr('transform', 'translate(' + margin.left + ', ' + margin.top + ')');
 
 d3.json('https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/cyclist-data.json', function (err, data) {
-   
+  
+  var parseTime = d3.timeParse('%S')
+
   data.forEach((data)=>{
-    console.log(data.Time)
+    data.Time = parseTime(data.Time)
+    data.Place = +data.Place;  
   })
 
   var yScale = d3.scaleLinear()
@@ -23,9 +26,12 @@ d3.json('https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
 
   var yAxis = d3.axisLeft(yScale);
   svg.call(yAxis);
-  
+  console.log(data)
   var xScale = d3.scaleTime()
-      .domain(d3.extent(data,d => d.Time))
+      .domain([
+        d3.min(data,d=>d.Seconds),
+        d3.max(data,d=>d.Seconds)
+      ])
       .range([0,width])
   
   var xAxis = d3.axisBottom(xScale)
