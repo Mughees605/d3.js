@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vento Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="LineChart.css"> </head>
+
+<body>
+    <div id="app">
+        <div class="app-wrapper">
+
+            <div class="app-content-wrapper">
+
+                <div class="content-wrapper">
+
+                    <div class="wrapper-main-content">
+
+                        <div class="main-content-data">
+                            <div data-reactroot="" class="container" id="svggraph">
+                                <div class="row">
+                                    <div id="data-container">
+                                        <div id="left" class="box">
+                                            <div class="heading">
+                                                <span class="currency">DKK</span> 12.585,92</div>
+                                            <div class="subtext">Updated a few seconds ago</div>
+                                        </div>
+                                        <div class="chart-seperator"></div>
+                                        <div id="middle" class="box">
+                                            <div class="heading">
+                                                <span class="currency">DKK</span> -3.868,81</div>
+                                            <div class="subtext">Change Since Last Month (DKK)</div>
+                                        </div>
+                                        <div class="chart-seperator"></div>
+                                        <div id="right" class="box">
+                                            <div class="heading">-23.51%</div>
+                                            <div class="subtext">Change Since Last Month (%)</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--
+                                    <div class="row">
+                                        <div class="popup"></div>
+                                    </div>
+-->
+                                <div class="row">
+                                    <div class="chart">
+                                            <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                                                <defs>
+                                                  <pattern id="circles-1" patternUnits="userSpaceOnUse" width='30' height='10'>
+                                                    <rect width='30' height='5' fill='#82D7DB'/>
+                                                    <rect width='30' height='5' fill='rgba(0,0,0,0.0)'/>
+                                                  </pattern>
+                                                </defs>
+                                              </svg>
+                                        <!-- <svg height="100%" viewBox="0 0 1058 300" class="linechart" id="svggraph">
+
+                                            <defs>
+                                                <pattern id="pattern-stripe" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                                                    <rect width="2" height="4" transform="translate(0,0)" fill="white"></rect>
+                                                </pattern>
+                                                <mask id="mask-stripe">
+                                                    <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-stripe)"></rect>
+                                                </mask>
+
+                                            </defs>
+                                            <g id="thegraph" pointer-events="all" fill="red">
+
+
+                                                <path class="linechart_path" d="M 80 31.81400955445226 L 80 31.81400955445226 ,L 107.33333333333333 73.55638131898148 ,L 134.66666666666666 153.14374241763923 ,L 162 120.84156983278667 ,L 189.33333333333331 147.61849751963751 ,L 216.66666666666666 150.3467025879595 ,L 244 64.95226969328586 ,L 271.33333333333337 82.09311549793878 ,L 298.66666666666663 126.44429062049718 ,L 326 126.48586145418678 ,L 353.3333333333333 210.4709123021392 ,L 380.66666666666663 153.00402237852063 ,L 408 173.9153801658579 ,L 435.33333333333337 111.87131725076996 ,L 462.6666666666667 93.47295372700788 ,L 490 92.51192012794873 ,L 517.3333333333333 9.27928735713675 ,L 544.6666666666666 0 ,L 572 44.71626513083666 ,L 599.3333333333333 101.1469202843398 ,L 626.6666666666666 125.94386185871839 ,L 654 104.86657572351727 ,L 681.3333333333333 179.762387987497 ,L 708.6666666666667 155.2190144859842 ,L 736 137.6532353560608 ,L 763.3333333333334 164.26586483223403 ,L 790.6666666666667 165.8132106671226 ,L 818 260.34196498090984 ,L 825.3333333333334 280 ,L 872.6666666666666 174.8901177937598 ,L 1058 162.5460324000609 "></path>
+                                                <path class="linechart_area" d="M 80 31.81400955445226 L 80 31.81400955445226 ,L 107.33333333333333 73.55638131898148 ,L 134.66666666666666 153.14374241763923 ,L 162 120.84156983278667 ,L 189.33333333333331 147.61849751963751 ,L 216.66666666666666 150.3467025879595 ,L 244 64.95226969328586 ,L 271.33333333333337 82.09311549793878 ,L 298.66666666666663 126.44429062049718 ,L 326 126.48586145418678 ,L 353.3333333333333 210.4709123021392 ,L 380.66666666666663 153.00402237852063 ,L 408 173.9153801658579 ,L 435.33333333333337 111.87131725076996 ,L 462.6666666666667 93.47295372700788 ,L 490 92.51192012794873 ,L 517.3333333333333 9.27928735713675 ,L 544.6666666666666 0 ,L 572 44.71626513083666 ,L 599.3333333333333 101.1469202843398 ,L 626.6666666666666 125.94386185871839 ,L 654 104.86657572351727 ,L 681.3333333333333 179.762387987497 ,L 708.6666666666667 155.2190144859842 ,L 736 137.6532353560608 ,L 763.3333333333334 164.26586483223403 ,L 790.6666666666667 165.8132106671226 ,L 818 260.34196498090984 ,L 825.3333333333334 280 ,L 872.6666666666666 174.8901177937598 ,L 1058 162.5460324000609 L 1058 280 L 80 280 "></path>
+
+                                                <g class="hover-line" id="line-move">
+                                                    <line id="svg-line" x1="0" x2="0" y1="0" y2="280"></line>
+                                                </g>
+
+                                            </g>
+                                            <g class="linechart_axis">
+                                                <line x1="0" y1="280" x2="1058" y2="280" stroke-dasharray="0"></line>
+                                                <line x1="0" y1="0" x2="1058" y2="0" stroke-dasharray="0"></line>
+                                            </g>
+                                            <g class="linechart_label">
+                                                <text transform="translate(40, 20)" text-anchor="middle">17.135,84 DKK</text>
+                                                <text transform="translate(40, 275)" text-anchor="middle">11.141,25 DKK</text>
+                                                <text transform="translate(80, 300)" text-anchor="start">Dec 20</text>
+                                                <text transform="translate(1058, 300)" text-anchor="end">Jan 19</text>
+
+                                            </g>
+
+                                        </svg> -->
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="LineChart.js"></script>
+
+</body>
+
+</html>

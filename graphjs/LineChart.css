@@ -1,0 +1,162 @@
+body {
+    font: 10px sans-serif;
+  }
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #82D7DB;
+    shape-rendering: crispEdges;
+  }
+
+  .x.axis path {
+    display: none;
+  }
+
+  .line {
+    fill: none;
+    stroke: #82D7DB !important;
+    stroke-width: 2px;
+  }
+
+  .area {
+    padding: 8px;
+    fill: url(#circles-1);
+    stroke: none;
+    opacity: .5;
+    width: 100%;
+    display: flex;
+    flex: 1;
+    mask: url(#mask-stripe);
+  }
+
+  .linechart_path {
+    stroke-width: 1.7;
+    fill: none;
+    stroke: #82D7DB;
+
+  }
+  
+.linechart {
+  padding: 8px;
+        display: flex!important;
+    flex: 1 1;
+    flex-grow: 1;
+    width: 100%;
+    position: relative;
+    cursor: crosshair;
+}
+.linechart_path {
+  stroke-width: 1.7;
+  fill: none;
+    stroke: #82D7DB;
+
+}
+
+.linechart_axis {
+  stroke: #D5DCE6;
+}
+
+.linechart_point {
+  fill: #fff;
+  stroke-width: 1.7;
+}
+
+.linechart_area {
+  padding: 8px;
+  fill: #82D7DB;
+  stroke: none;
+  opacity: .5;
+    width:100%;
+    display: flex;
+    flex: 1;
+        mask: url(#mask-stripe);
+}
+
+.linechart_label {
+ fill: #7f8fa4;
+
+}
+
+.linechart_label text {
+    font-size: 14px;
+    text-align: center;
+    color: #7f8fa4;
+}
+
+.hoverLine {
+  stroke: #FFB119;
+  stroke-width: 1;
+}
+
+.main-content-data .container .row:first-child() {
+    flex-shrink: 0;
+    height: 140px;
+    padding: 0 56px;
+}
+
+.subtext {
+    color: #7f8fa4;
+}
+
+#data-container .heading {
+    font-size: 42px;
+    color: #3e3a54;
+}
+
+#data-container .heading .currency {
+    font-size: 0.35em!important;
+    color: #7f8fa4;
+}
+
+#data-container {
+    padding-bottom: 0.75em;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -webkit-box-pack: space-around;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: space-around;
+    justify-content: space-around;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+.chart-seperator {
+    border-right: 1px solid #D5DCE6;
+    height: 100px;
+}
+
+/* Tool Tip */
+
+.hover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  padding: 5px;
+  border-radius: 4px;
+  background-color: #735cd0;
+  color: white;
+}
+
+.hover .price {
+    font-weight: 700; }
+    
+.hover-line line {
+    stroke: #3e3a54!important;
+        stroke-width: 1;
+    opacity: 0;
+    transition: 250ms;
+}
+
+svg:hover .hover-line line {
+    opacity: 1;
+}
