@@ -1,5 +1,5 @@
 {
-  "name": "egghead-d3v4",
+  "name": "bias",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,16 +7,11 @@
     "start": "browser-sync start -s -f index.html src --no-ui --no-notify"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bclinkinbeard/egghead-d3v4.git"
+    "type": "git"
   },
   "keywords": [],
-  "author": "Ben Clinkinbeard <ben.clinkinbeard@gmail.com> (http://benclinkinbeard.com/)",
+  "author": "Hafiz Mughes <muhammadmughees08@gmail.com> ",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/bclinkinbeard/egghead-d3v4/issues"
-  },
-  "homepage": "https://github.com/bclinkinbeard/egghead-d3v4#readme",
   "dependencies": {
     "d3": "4.1.1"
   },
